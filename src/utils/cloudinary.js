@@ -20,9 +20,8 @@ const uploadOnCloudinary = async (localFilePath) => {
     fs.unlinkSync(localFilePath); // delete after successful upload
     return response;
   } catch (error) {
-    if (fs.existsSync(localFilePath)) {
+    
       fs.unlinkSync(localFilePath); // safely delete if exists
-    }
     console.log(error);
     return null;
   }
